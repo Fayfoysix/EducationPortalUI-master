@@ -1,0 +1,44 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Education Portal</span>
+  <span class="header-spacer"></span>
+  <button routerLink="/auth/login" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" matTooltip="giriş yap" >
+    <mat-icon>login</mat-icon>
+  </button>
+</mat-toolbar>
+
+
+<div class="offcanvas offcanvas-start w-25" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Education Portal UI</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <mat-list role="list">
+
+      <mat-list-item role="listitem" routerLink="/">
+        Ana sayfa
+      </mat-list-item>
+
+      <mat-list-item role="listitem" routerLink="/lessons" *ngIf="isActive === true">
+        Dersler
+      </mat-list-item>
+
+       <mat-list-item role="listitem" routerLink="/panel" *ngIf="isActive === true">
+        Panel
+      </mat-list-item>
+
+      <mat-list-item role="listitem" routerLink="/auth/login" *ngIf="isActive === false">
+        Giriş yap 
+      </mat-list-item>
+      
+      <mat-list-item role="listitem" routerLink="/auth/register" *ngIf="isActive === false">
+        Kayıt ol 
+      </mat-list-item>
+
+
+    </mat-list>
+  </div>
+</div>
